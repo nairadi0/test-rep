@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: black;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .back-buttons {
+            margin-top: 20px;
+        }
+        .back-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            document.getElementById('movie-title').innerText = title;
+        };
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MyFlix</div>
+    </div>
+    <h2 id="movie-title"></h2>
+    <p>More details about the movie will be shown here.</p>
+    <div class="back-buttons">
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button onclick="window.location.href='search.html'">Search</button>
+    </div>
+</body>
+</html>
